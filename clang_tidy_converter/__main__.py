@@ -26,7 +26,8 @@ def create_argparser():
 
     return p
 
-def main(args):
+def main():
+    args = create_argparser().parse_args()
     parser = ClangTidyParser()
     messages = parser.parse(sys.stdin.readlines())
 
@@ -50,4 +51,4 @@ def convert_paths_to_relative(messages, root_dir):
         convert_paths_to_relative(message.children, root_dir)
 
 if __name__ == "__main__":
-    main(create_argparser().parse_args())
+    main()

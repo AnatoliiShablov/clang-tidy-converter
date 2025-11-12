@@ -30,5 +30,10 @@ setup(
     setup_requires=['pytest-runner', 'wheel'],
     tests_require=['pytest'],
     classifiers=[],
+    entry_points={
+        'console_scripts': [
+            'clang_tidy_converter=clang_tidy_converter.__main__:main',
+        ],
+    },
 )
 
